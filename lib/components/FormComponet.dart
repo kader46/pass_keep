@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:pass_keep/components/colors.dart';
 
 class PasswordCard extends StatelessWidget {
+  final String socialApp ; 
+  final String email ;
+  final String password ;
   const PasswordCard({
-    Key? key,
+    Key? key, required this.socialApp, required this.email, required this.password,
   }) : super(key: key);
 
   @override
@@ -18,7 +21,7 @@ class PasswordCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Image.asset(
-              'Assets/icons/social/png/045-facebook.png',
+              'Assets/icons/social/png/$socialApp.png',
               width: 50,
               height: 50,
             ),
@@ -26,11 +29,11 @@ class PasswordCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'emailhere@gmail.com ',
+                  email,
                   style: TextStyle(color: primaryColor),
                 ),
                 Text(
-                  '*******************',
+                  password,
                   style: TextStyle(color: primaryColor),
                 ),
               ],

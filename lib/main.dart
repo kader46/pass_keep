@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:pass_keep/components/colors.dart';
+import 'package:pass_keep/generator.dart';
 import 'package:pass_keep/home.dart';
 
 void main() => runApp(MyApp());
@@ -35,7 +36,7 @@ class _LandingPageState extends State<LandingPage> {
         preferredSize: Size.fromHeight(100),
         child: AppBar(
             elevation: 0,
-            toolbarHeight: 100,
+            toolbarHeight: 120,
             backgroundColor: Colors.white,
             title: Column(
               children: [
@@ -46,12 +47,12 @@ class _LandingPageState extends State<LandingPage> {
                   'Password Vault',
                   style: TextStyle(
                       color: primaryColor,
-                      fontSize: 42,
+                      fontSize: 45,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'Keep your passwords safe in one App ',
-                  style: TextStyle(fontSize: 16, color: thirdColor),
+                  style: TextStyle(fontSize: 14, color: forthColor),
                 ),
                 Divider(
                   color: primaryColor,
@@ -101,7 +102,7 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             Text('Abdpu'),
             Home(),
-            Text('Page2'),
+            GeneratorPage(),
           ],
         ),
       ),

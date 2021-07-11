@@ -14,28 +14,61 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: Column(
-          
           children: [
             SizedBox(
               height: 5,
             ),
+            Text(
+              'My Password List',
+              style: TextStyle(
+                  color: primaryColor,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             
-            SizedBox(height: 10,),
-            PasswordCard(socialApp: 'facebook',password: '**********',email: 'mymA@gmail.com',),
-            PasswordCard(socialApp: 'instagram',password: '*****************',email: 'mymAil123@gmail.com',),
-            PasswordCard(socialApp: 'messenger',password: '**********',email: 'mymAil123@gmail.com',),
-            PasswordCard(socialApp: 'twitter-1',password: '***************',email: 'mymAil13@gmail.com',),
-            PasswordCard(socialApp: 'skype',password: '****************',email: 'mymAil123@gmail.com',),
-            PasswordCard(socialApp: 'whatsapp',password: '****************',email: '056605605506',),
-            PasswordCard(socialApp: 'github',password: '****************',email: 'mymAil123@gmail.com',),
-            
+            PasswordCard(
+              socialApp: 'facebook',
+              password: '**********',
+              email: 'mymA@gmail.com',
+            ),
+            PasswordCard(
+              socialApp: 'instagram',
+              password: '*****************',
+              email: 'mymAil123@gmail.com',
+            ),
+            PasswordCard(
+              socialApp: 'messenger',
+              password: '**********',
+              email: 'mymAil123@gmail.com',
+            ),
+            PasswordCard(
+              socialApp: 'twitter-1',
+              password: '***************',
+              email: 'mymAil13@gmail.com',
+            ),
+            PasswordCard(
+              socialApp: 'skype',
+              password: '****************',
+              email: 'mymAil123@gmail.com',
+            ),
+            PasswordCard(
+              socialApp: 'whatsapp',
+              password: '****************',
+              email: '056605605506',
+            ),
+            PasswordCard(
+              socialApp: 'github',
+              password: '****************',
+              email: 'mymAil123@gmail.com',
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-

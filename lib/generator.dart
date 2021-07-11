@@ -49,6 +49,16 @@ class _GeneratorPageState extends State<GeneratorPage> {
             child: Column(
           children: [
             SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Password Generator',
+              style: TextStyle(
+                  color: primaryColor,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
               height: 20,
             ),
             Row(
@@ -121,7 +131,7 @@ class _GeneratorPageState extends State<GeneratorPage> {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             // Padding(
             //   padding: const EdgeInsets.all(15.0),
@@ -165,7 +175,7 @@ class _GeneratorPageState extends State<GeneratorPage> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 5,
             ),
             FlatButton(
                 onPressed: () {
@@ -217,9 +227,7 @@ class _GeneratorPageState extends State<GeneratorPage> {
                     ),
                   ),
                 )),
-            SizedBox(
-              height: 30,
-            ),
+
             if (newPassword.isNotEmpty && newPassword != null)
               Center(
                   child: SingleChildScrollView(
@@ -236,9 +244,27 @@ class _GeneratorPageState extends State<GeneratorPage> {
                   child: SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    newPassword,
-                    style: TextStyle(color: forthColor, fontSize: 25),
+                  child: GestureDetector(
+                    onLongPress: () {
+                      print(newPassword);
+                      Clipboard.setData(new ClipboardData(text: newPassword));
+                      ScaffoldMessenger.of(context).showSnackBar(new SnackBar(
+                          backgroundColor: secendoryColor,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(25))),
+                          width: 230,
+                          elevation: 0,
+                          behavior: SnackBarBehavior.floating,
+                          content: Text(
+                            'Password copied to ClipBoard !',
+                            style: TextStyle(color: primaryColor),
+                          )));
+                    },
+                    child: Text(
+                      newPassword,
+                      style: TextStyle(color: forthColor, fontSize: 25),
+                    ),
                   ),
                 ),
               ))

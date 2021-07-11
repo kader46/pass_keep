@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
+import 'package:pass_keep/addNewCard.dart';
 import 'package:pass_keep/components/colors.dart';
 import 'package:pass_keep/generator.dart';
 import 'package:pass_keep/home.dart';
@@ -100,7 +101,7 @@ class _LandingPageState extends State<LandingPage> {
             });
           },
           children: [
-            Text('Abdpu'),
+            AddPass(),
             Home(),
             GeneratorPage(),
           ],

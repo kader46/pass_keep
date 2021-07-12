@@ -1,6 +1,6 @@
 # pass_keep
-
-A new Flutter project.
+This App is for keeping all your password stored on your local application.
+The UI is done. Howver, The Logic part is not constructed yet.  
 
 ## Getting Started
 

@@ -133,23 +133,7 @@ class _GeneratorPageState extends State<GeneratorPage> {
             SizedBox(
               height: 10,
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(15.0),
-            //   child: TextField(
-            //     controller: _passwordLength,
-            //     decoration: InputDecoration(
-            //       border: new OutlineInputBorder(
-            //         borderRadius: new BorderRadius.circular(25.0),
-            //         borderSide: new BorderSide(),
-            //       ),
-            //       filled: true,
-            //       fillColor: Colors.grey[300],
-            //       labelText: 'Enter Length',
-            //       labelStyle: TextStyle(color: Colors.blue),
-            //     ),
-            //     keyboardType: TextInputType.number,
-            //   ),
-            // ),
+           
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
               child: TextFormField(
@@ -159,7 +143,7 @@ class _GeneratorPageState extends State<GeneratorPage> {
                   FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
                 ],
                 style: TextStyle(
-                    color: primaryColor, fontSize: 24, fontFamily: 'Nasa'),
+                    color: primaryColor, fontSize: 24, ),
                 controller: _passwordLength,
                 cursorColor: primaryColor,
                 decoration: InputDecoration(

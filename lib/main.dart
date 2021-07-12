@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: LandingPage(),
     );
   }
@@ -28,6 +29,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   int currencetIndex = 1;
+  int a = 15 ;
   PageController pageIndex = PageController();
 
   @override
@@ -77,6 +79,7 @@ class _LandingPageState extends State<LandingPage> {
         snakeViewColor: thirdColor,
         onTap: (valueSelcted) {
           setState(() {
+            
             currencetIndex = valueSelcted;
             // pageIndex.jumpToPage(valueSelcted) ;
             pageIndex.animateToPage(valueSelcted,

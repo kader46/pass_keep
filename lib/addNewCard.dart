@@ -33,42 +33,86 @@ class _AddPassState extends State<AddPass> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Add New Element',
-            style: TextStyle(
-                color: primaryColor, fontSize: 28, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          DirectSelect(
-              itemExtent: 50.0,
-              selectedIndex: selctedIndex,
-              backgroundColor: Colors.white,
-              child: MySelectionItem(
-                isForList: false,
-                title: elements[selctedIndex],
-              ),
-              onSelectedItemChanged: (index) {
-                setState(() {
-                  selctedIndex = index!;
-                });
-              },
-              items: _buildItems1()),
-          Padding(
-            padding: const EdgeInsets.only(left: 10.0, top: 5.0),
-            child: Text(
-              "Long press and scroll",
-              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 5,
             ),
-          ),
-          
-        ],
+            Text(
+              'Add New Element',
+              style: TextStyle(
+                  color: primaryColor, fontSize: 28, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            DirectSelect(
+                itemExtent: 50.0,
+                selectedIndex: selctedIndex,
+                backgroundColor: Colors.white,
+                child: MySelectionItem(
+                  isForList: false,
+                  title: elements[selctedIndex],
+                ),
+                onSelectedItemChanged: (index) {
+                  setState(() {
+                    selctedIndex = index!;
+                  });
+                },
+                items: _buildItems1()),
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0, top: 5.0),
+              child: Text(
+                "Long press and scroll",
+                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(height: 35,),
+            TextFormField(
+              decoration: InputDecoration(
+                    border: new OutlineInputBorder(
+                      borderRadius: new BorderRadius.circular(25.0),
+                      borderSide: new BorderSide(),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                    labelText: 'Enter Email or Username',
+                    labelStyle: TextStyle(color: primaryColor),
+                  ),
+            ),
+            SizedBox(height: 30,),
+             TextFormField(
+              decoration: InputDecoration(
+                    border: new OutlineInputBorder(
+                      borderRadius: new BorderRadius.circular(25.0),
+                      borderSide: new BorderSide(),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                    labelText: 'Enter Password',
+                    labelStyle: TextStyle(color: primaryColor),
+                  ),
+            ),
+            SizedBox(height: 20,),
+            TextButton(
+            onPressed: (){}, 
+            child: Container(
+                  margin: EdgeInsets.all(15),
+                  height: 50,
+                  child: Center(child: Text('Add To Vault ', style: TextStyle(color:secendoryColor,fontSize: 20 ))),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    //color: primaryColor,
+                    gradient:
+                        LinearGradient(colors: [forthColor, primaryColor]),
+                  ),
+            ),
+
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -91,7 +135,7 @@ class MySelectionItem extends StatelessWidget {
               padding: EdgeInsets.all(10.0),
             )
           : Card(
-              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              //margin: EdgeInsets.symmetric(horizontal: 20.0),
               child: Stack(
                 children: <Widget>[
                   _buildItem(context),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pass_keep/components/colors.dart';
 
 class PasswordCard extends StatelessWidget {
@@ -38,7 +39,23 @@ class PasswordCard extends StatelessWidget {
                 ),
               ],
             ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.copy))
+            IconButton(onPressed: () {
+               
+                      Clipboard.setData(new ClipboardData(text: password));
+                      ScaffoldMessenger.of(context).showSnackBar(new SnackBar(
+                          backgroundColor: secendoryColor,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(25))),
+                          width: 300,
+                          elevation: 0,
+                          behavior: SnackBarBehavior.floating,
+                          content: Text(
+                            '${socialApp.replaceFirst(socialApp[0], socialApp[0].toUpperCase())}\'s Password copied to ClipBoard !',
+                            style: TextStyle(color: primaryColor),
+                          )));
+                    
+            }, icon: Icon(Icons.copy))
           ],
         ),
       ),

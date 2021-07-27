@@ -54,6 +54,8 @@ class _PasswordCardState extends State<PasswordCard> {
                 print('Enable chnage');
                 setState(() {
                   changeMode = !changeMode;
+                  if(!changeMode || isObscure==true) isObscure=!isObscure;
+
                 });
               },
               child: Image.asset(
@@ -76,7 +78,7 @@ class _PasswordCardState extends State<PasswordCard> {
                   child: TextFormField(
                     style: TextStyle(fontSize: 20),
                     controller: mailCon,
-                    readOnly: !changeMode,
+                    enabled: changeMode,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
@@ -98,7 +100,7 @@ class _PasswordCardState extends State<PasswordCard> {
                     child: TextField(
                       controller: passCon,
                       obscureText: isObscure,
-                      readOnly: !changeMode,
+                      enabled: changeMode,
                       style: TextStyle(fontSize: 18),
                       decoration: InputDecoration(
                         border: InputBorder.none,

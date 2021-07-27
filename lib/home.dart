@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pass_keep/accountList.dart';
 import 'package:pass_keep/accountModel.dart';
 import 'package:pass_keep/components/FormComponet.dart';
-import 'package:pass_keep/components/card.dart';
+
 import 'package:pass_keep/components/colors.dart';
 
 import 'dbhelper.dart';
@@ -24,11 +24,6 @@ class _HomeState extends State<Home> {
   }
 
   List<Widget> returnedList = [];
-  void initState() {
-    
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -71,9 +66,7 @@ class _HomeState extends State<Home> {
                         itemCount: snapshot.data!.length,
                         itemBuilder: (context, i) {
                           print(snapshot.data![i].platform.toString());
-                          return 
-                         
-                          PasswordCard(
+                          return PasswordCard(
                               id: snapshot.data![i].id.toString(),
                               socialApp: snapshot.data![i].platform.toString(),
                               email: snapshot.data![i].email.toString(),
@@ -83,49 +76,12 @@ class _HomeState extends State<Home> {
                   // return Text('Data kyna ');
                 } else if (snapshot.hasError) {
                   return Text("${snapshot.error}");
-                }
-
-               else return CircularProgressIndicator(
-                 color: primaryColor,
-               );
+                } else
+                  return CircularProgressIndicator(
+                    color: primaryColor,
+                  );
               },
             ),
-
-            // PasswordCard(
-            //   socialApp: 'facebook',
-            //   password: '*********************',
-            //   email: 'user1@gmail.com',
-            // ),
-            // PasswordCard(
-            //   socialApp: 'instagram',
-            //   password: '********************',
-            //   email: 'mymail123@gmail.com',
-            // ),
-            // PasswordCard(
-            //   socialApp: 'messenger',
-            //   password: '********************',
-            //   email: 'mymail123@gmail.com',
-            // ),
-            // PasswordCard(
-            //   socialApp: 'twitter-1',
-            //   password: '*************************',
-            //   email: 'twitteraccount@gmail.com',
-            // ),
-            // PasswordCard(
-            //   socialApp: 'skype',
-            //   password: '****************',
-            //   email: 'sauce46@gmail.com',
-            // ),
-            // PasswordCard(
-            //   socialApp: 'whatsapp',
-            //   password: '*****************',
-            //   email: '(+213)056605605506',
-            // ),
-            // PasswordCard(
-            //   socialApp: 'github',
-            //   password: '****************',
-            //   email: 'kader46',
-            // ),
           ],
         ),
       ),

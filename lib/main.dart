@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
+import 'package:pass_keep/accountList.dart';
 import 'package:pass_keep/addNewCard.dart';
 import 'package:pass_keep/components/colors.dart';
+import 'package:pass_keep/dbhelper.dart';
 import 'package:pass_keep/generator.dart';
 import 'package:pass_keep/home.dart';
 
@@ -28,9 +30,18 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  var db = DBHelper();
+ 
   int currencetIndex = 1;
+
   int a = 15 ;
-  PageController pageIndex = PageController();
+  PageController pageIndex = PageController(initialPage: 1);
+  @override
+  void initState() {
+    db.initDb() ;
+    db.getAccounts();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +108,7 @@ class _LandingPageState extends State<LandingPage> {
       ),
       body: SafeArea(
         child: PageView(
+          
           controller: pageIndex,
           onPageChanged: (PageSelcted) {
             setState(() {
@@ -104,8 +116,8 @@ class _LandingPageState extends State<LandingPage> {
             });
           },
           children: [
-            AddPass(),
-            Home(),
+            AddPass(db: db,),
+            Home(dbHelper: db,),
             GeneratorPage(),
           ],
         ),

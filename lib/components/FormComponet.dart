@@ -99,7 +99,7 @@ class _PasswordCardState extends State<PasswordCard> {
                     child: TextField(
                       controller: passCon,
                       obscureText: isObscure,
-                      enabled: changeMode,
+                      readOnly: !changeMode,
                       style: TextStyle(fontSize: 18),
                       decoration: InputDecoration(
                         border: InputBorder.none,

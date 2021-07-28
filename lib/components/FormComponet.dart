@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pass_keep/accountModel.dart';
 import 'package:pass_keep/components/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../dbhelper.dart';
 
@@ -24,7 +23,7 @@ class PasswordCard extends StatefulWidget {
 }
 
 class _PasswordCardState extends State<PasswordCard> {
-  @override
+ 
   bool isObscure = true;
   bool changeMode = false;
   TextEditingController mailCon = TextEditingController();
@@ -32,7 +31,7 @@ class _PasswordCardState extends State<PasswordCard> {
   var db = DBHelper();
   @override
   void initState() {
-    // TODO: implement initState
+
     mailCon = TextEditingController(text: widget.email);
     passCon = TextEditingController(text: widget.password);
     super.initState();
@@ -143,6 +142,7 @@ class _PasswordCardState extends State<PasswordCard> {
                                   )));
                           setState(() {
                             changeMode = !changeMode;
+                            isObscure = !isObscure;
                           });
                         },
                         icon: Icon(Icons.check),
@@ -197,7 +197,7 @@ class _PasswordCardState extends State<PasswordCard> {
 
 showAlertDialog(BuildContext context, Account acc) {
   // Create button
-  final Function func;
+
   Widget okButton = FlatButton(
     child: Text("Yes"),
     onPressed: () {

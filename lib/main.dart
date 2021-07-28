@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
-import 'package:pass_keep/accountList.dart';
+
 import 'package:pass_keep/addNewCard.dart';
 import 'package:pass_keep/components/colors.dart';
 import 'package:pass_keep/dbhelper.dart';
@@ -110,9 +110,9 @@ class _LandingPageState extends State<LandingPage> {
         child: PageView(
           
           controller: pageIndex,
-          onPageChanged: (PageSelcted) {
+          onPageChanged: (pageSelcted) {
             setState(() {
-              currencetIndex = PageSelcted;
+              currencetIndex = pageSelcted;
             });
           },
           children: [

@@ -1,7 +1,6 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:direct_select/direct_select.dart';
-import 'package:mysql1/mysql1.dart';
 import 'package:pass_keep/accountModel.dart';
 import 'package:pass_keep/dbhelper.dart';
 import 'components/colors.dart';

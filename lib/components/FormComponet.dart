@@ -77,7 +77,7 @@ class _PasswordCardState extends State<PasswordCard> {
                   child: TextFormField(
                     style: TextStyle(fontSize: 20),
                     controller: mailCon,
-                    enabled: changeMode,
+                    readOnly: !changeMode,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
@@ -89,7 +89,7 @@ class _PasswordCardState extends State<PasswordCard> {
                 ),
                 Container(
                   width: 150,
-                  height: 30,
+                  //height: 30,
                   child: GestureDetector(
                     onLongPress: () {
                       setState(() {
@@ -99,7 +99,7 @@ class _PasswordCardState extends State<PasswordCard> {
                     child: TextField(
                       controller: passCon,
                       obscureText: isObscure,
-                      readOnly: !changeMode,
+                      enabled: changeMode,
                       style: TextStyle(fontSize: 18),
                       decoration: InputDecoration(
                         border: InputBorder.none,
